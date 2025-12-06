@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 Error</title>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+body {
+  margin: 0;
+  background: #08131d;
+  color: #cfe9ff;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  overflow: hidden;
+}
+
+/* TEXT SIDE */
+.left {
+  max-width: 550px;
+}
+
+.tag {
+  background: #0d4778;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 15px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 54px;
+  margin: 0;
+  margin-bottom: 12px;
+  color: #e7f3ff;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* BUTTONS */
+.btns {
+  display: flex;
+  gap: 18px;
+}
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 17px;
+  border: 2px solid #0c8ddf;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #0c8ddf;
+}
+
+.btn-blue {
+  background: #0c8ddf;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: #0c8ddf;
+  color: white;
+}
+
+.btn-blue:hover {
+  background: #0b78bf;
+}
+
+/* RIGHT ICON */
+.icon-wrapper {
+  position: absolute;
+  right: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: float 3s ease-in-out infinite;
+}
+
+.icon {
+  position: relative;
+  font-size: 210px;
+  color: #0c8ddf;
+}
+
+.icon .human {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -42%);
+  font-size: 115px;
+  color: #d9edff;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(calc(-50% - 12px)) translateX(7px); }
+  100% { transform: translateY(-50%) translateX(0); }
+}
+
+/* STARS */
+.star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #c8e8ff;
+  border-radius: 50%;
+  opacity: .75;
+  animation: blink 2.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: .2; }
+  50% { opacity: .9; }
+}
+
+/* star placement */
+.star:nth-child(1){ top: 26%; right: 230px; animation-delay: .2s; }
+.star:nth-child(2){ top: 61%; right: 160px; animation-delay: .9s; }
+.star:nth-child(3){ top: 38%; right: 340px; animation-delay: 1.4s; }
+.star:nth-child(4){ top: 72%; right: 280px; animation-delay: .6s; }
+.star:nth-child(5){ top: 48%; right: 120px; animation-delay: 1.8s; }
+
+/* SUPPORT TEXT */
+.support {
+  position: absolute;
+  bottom: 50px;
+  right: 200px;
+  font-size: 15px;
+  text-align: right;
+  color: #b8dbff;
+}
+
+.support a {
+  color: #63b8ff;
+  text-decoration: none;
+}
+.support a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="left">
+  <span class="tag">404 Error</span>
+  <h1>Lost in Space?</h1>
+  <p>Looks like you've ventured into uncharted territory. The page you're looking for has drifted off into space.</p>
+
+  <div class="btns">
+    <a href="/" class="btn btn-outline">← Return to Earth</a>
+    <a href="/pages" class="btn btn-blue">🔍 Explore Pages</a>
+  </div>
+</div>
+
+<!-- STARS -->
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+
+<!-- ICON GLOBE + PERSON -->
+<div class="icon-wrapper">
+  <div class="icon">
+    <i class="bi bi-globe2 globe"></i>
+    <i class="bi bi-person-workspace human"></i>
+  </div>
+</div>
+
+<div class="support">
+  Need help finding your way?<br>
+  <a href="/support">⚙ Contact Support</a>
+</div>
+
+</body>
+</html>
