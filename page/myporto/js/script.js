@@ -71,7 +71,6 @@ const container = document.getElementById('portfolioContainer');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const searchInput = document.getElementById('searchInput');
 
-// --- Fungsi 1: Membuat Kartu Konten ---
 function createCard(item) {
     const card = document.createElement('div');
     card.classList.add('portfolio-item', item.type);
@@ -114,19 +113,19 @@ function createCard(item) {
     return card;
 }
 
-// --- Fungsi 2: Render Konten ---
+
 function renderPortfolio(data) {
-    container.innerHTML = ''; // Kosongkan container
+    container.innerHTML = ''; 
     data.forEach(item => {
         container.appendChild(createCard(item));
     });
 }
 
-// --- Fungsi 3: Filter Berdasarkan Tombol ---
+
 function filterByButton(filterType) {
     const searchTerm = searchInput.value.toLowerCase();
     
-    // Update kelas active pada tombol
+
     filterButtons.forEach(btn => {
         btn.classList.remove('active');
         if (btn.getAttribute('data-filter') === filterType) {
@@ -143,14 +142,13 @@ function filterByButton(filterType) {
     renderPortfolio(filteredData);
 }
 
-// --- Fungsi 4: Filter Berdasarkan Search Input ---
+
 function filterContent() {
-    // Ambil filter yang sedang aktif dari tombol
     const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
     filterByButton(activeFilter);
 }
 
-// --- Event Listeners ---
+
 filterButtons.forEach(button => {
     button.addEventListener('click', function() {
         const filterType = this.getAttribute('data-filter');
@@ -158,7 +156,7 @@ filterButtons.forEach(button => {
     });
 });
 
-// --- Inisialisasi: Tampilkan semua konten saat pertama kali dibuka ---
+
 document.addEventListener('DOMContentLoaded', () => {
     renderPortfolio(portfolioData);
 });

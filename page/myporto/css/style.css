@@ -364,8 +364,8 @@ nav a:hover::after {
   }
 
   .menu-nav a {
-    font-size: 24px;
-    padding: 20px 12px;
+    font-size: 15px;
+    padding: 6px 11px;
     display: block;
     width: 100%;
     text-align: center;
@@ -395,6 +395,11 @@ nav a:hover::after {
   .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -6px);
   }
+
+  .copyright {
+    margin-top: 15px;
+    font-size: 12px; 
+  }  
 }
 
 
