@@ -1,3 +1,12 @@
+:root {
+  --primary-color: #58a6ff;
+  --secondary-color: #00eaff;
+  --background-color: #0b1520;
+  --card-background: #11202E;
+  --text-color: #cfd9e8;
+}
+
+
 body {
   background: #0b1520;
   color: white;
@@ -16,7 +25,8 @@ nav {
   padding: 20px 60px;
   position: fixed;
   top: 0;
-  right: 10px;
+  left: 0;
+  right: 0;
   background: rgba(10, 18, 30, 0.8);
   backdrop-filter: blur(10px);
   z-index: 999;
@@ -144,18 +154,38 @@ nav a:hover::after {
   background: #11202E;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  transition: 0.3s ease-in-out;
+  box-shadow: 0 10px 30px rgba(186, 159, 159, 0.3);
+  transition: 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(88, 166, 255, 0.4);
+  border-radius: 30px 10px 30px 10px;
+  transform: scale(11) rotate(12);
 }
 
 .project-card img {
   width: 100%;
   height: 230px;
   object-fit: cover;
+}
+
+.project-card .card-body .link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: white;
+  text-shadow: 0 0 5.5px var(--card-background);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  box-shadow: 0 0 5.5px var(--text-color);
+}
+
+.project-card .card-body .link:hover {
+  background: var(--secondary-color);
 }
 
 .card-body {
@@ -222,6 +252,7 @@ nav a:hover::after {
 .socialmedia a:hover {
   background: rgba(88, 166, 255, 0.3);
   transform: scale(1.1);
+  border-radius: 8px;
 }
 
 .socialmedia svg {
@@ -249,10 +280,11 @@ nav a:hover::after {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  position: absolute;
-  right: 10px;  
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
+  margin-left: auto;
+  right: auto;
+  top: auto;
+  transform: none;
 }
 
 .hamburger span {
@@ -268,15 +300,17 @@ nav a:hover::after {
   }
 
   .menu {
-    position: absolute;
+    position: fixed;
     top: 65px;
     left: 0;
-    width: 100%;
+    right: 0;
+    width: 100vw;
     background: #111;
     flex-direction: column;
     text-align: center;
     padding: 0;
     gap: 18px;
+    box-sizing: border-box;
 
     /* Animasi */
     max-height: 0;
@@ -287,15 +321,34 @@ nav a:hover::after {
   }
 
   .menu a {
-    font-size: 17px;
-    padding: 8px 0;
+    font-size: 24px;
+    padding: 20px 12px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* remove desktop link left margin on small screens */
+  nav a {
+    margin-left: 0;
   }
 
   .menu.show {
-    display: flex;
-    max-height: 300px; 
+    max-height: 500px;       
+    padding: 30px 0;
     opacity: 1;
-    padding: 15px 0;
+  }
+
+  /* make nav spacing tighter on small screens so menu reaches edges */
+  nav {
+    padding: 8px 1px;
+    justify-content: space-between;
+  }
+
+  /* move hamburger slightly left from the edge to look balanced */
+  .hamburger {
+    right: 12px;
+    transform: translateX(-8px);
   }
 
   /* Hamburger jadi X */
