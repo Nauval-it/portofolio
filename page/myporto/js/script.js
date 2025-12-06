@@ -162,3 +162,11 @@ filterButtons.forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
     renderPortfolio(portfolioData);
 });
+
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.addEventListener("click", () => {
+  menu.classList.toggle("show");
+  hamburger.classList.toggle("active");
+});
