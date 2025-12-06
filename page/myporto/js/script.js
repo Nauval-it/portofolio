@@ -168,3 +168,167 @@ hamburger.addEventListener("click", () => {
   menu.classList.toggle("show");
   hamburger.classList.toggle("active");
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+
+    const loadingScreen = document.createElement('div');
+    loadingScreen.className = 'loading-screen';
+    loadingScreen.id = 'loadingScreen';
+    loadingScreen.innerHTML = `
+        <div class="loading-content">
+            <div class="loader"></div>
+            <h2 class="loading-text">Memuat Portfolio...</h2>
+        </div>
+    `;
+    document.body.prepend(loadingScreen);
+
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.visibility = 'hidden';
+            animateElements();
+        }, 1000);
+    });
+    elemen
+    function animateElements() {
+        const header = document.querySelector('.portfolio-header');
+        if (header) header.style.animation = 'fadeInUp 0.8s ease forwards';
+        
+        const controls = document.querySelector('.controls-container');
+        if (controls) controls.style.animation = 'fadeInUp 0.8s ease 0.2s forwards';
+        
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach((btn, index) => {
+            btn.style.animation = `fadeIn 0.5s ease ${0.3 + (index * 0.1)}s forwards`;
+        });
+        
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) searchInput.style.animation = 'fadeInUp 0.8s ease 0.3s forwards';
+        
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        portfolioItems.forEach((item, index) => {
+            item.style.animation = `fadeInUp 0.8s ease ${0.3 + (index * 0.1)}s forwards`;
+        });
+        
+        const footer = document.querySelector('.footer');
+        if (footer) footer.style.animation = 'fadeIn 1s ease 0.5s forwards';
+    }
+    
+    document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+  
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+        
+ 
+        button.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(-3px)';
+            }
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(0)';
+            }
+        });
+    });
+    
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.boxShadow = '0 15px 40px rgba(88, 166, 255, 0.3)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '';
+        });
+    });
+    
+ 
+    document.querySelectorAll('.socialmedia a').forEach(icon => {
+        icon.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.1)';
+        });
+        
+        icon.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+
+    function animateNewContent() {
+        const newItems = document.querySelectorAll('.portfolio-item:not(.animated)');
+        newItems.forEach((item, index) => {
+            item.classList.add('animated');
+            item.style.animation = `fadeInUp 0.8s ease ${index * 0.1}s forwards`;
+        });
+    }
+});
+
+// Hamburger Menu Script
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    
+    // Buat overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+    
+    // Fungsi toggle menu
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+    
+    // Event listener untuk hamburger
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+            const opened = menu.classList.toggle("active");
+            hamburger.classList.toggle("active");
+            // accessibility: announce state
+            hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false');
+
+            // focus and highlight first menu item when opened
+            const firstLink = menu.querySelector('a');
+            if (opened && firstLink) {
+                firstLink.classList.add('highlight');
+                try { firstLink.focus({ preventScroll: true }); } catch(e) { firstLink.focus(); }
+            } else if (firstLink) {
+                firstLink.classList.remove('highlight');
+            }
+    });
+    
+    // Tutup menu saat klik overlay
+    overlay.addEventListener('click', function() {
+        toggleMenu();
+    });
+    
+    // Tutup menu saat klik link
+    document.querySelectorAll('.menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            toggleMenu();
+        });
+    });
+    
+    // Tutup menu saat resize ke desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            hamburger.classList.remove('active');
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+    });
+});
