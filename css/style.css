@@ -476,6 +476,13 @@ color: white;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+.copyright {
+    margin-top: 20px;
+    opacity: 0.7;
+    font-size: 14px;
+    text-align: center;
+}
+
 /* amimasi */
 @keyframes spin {
     to { transform: rotate(360deg); }
