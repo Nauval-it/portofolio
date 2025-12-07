@@ -1,6 +1,6 @@
 // Data Dummy untuk Artikel dan Video
 const portfolioData = [
-    // 5 Artikel
+   // 5 Artikel
     {
         id: 1,
         type: 'artikel',
@@ -87,7 +87,6 @@ function createCard(item) {
             </div>
     `;
 
-    // Konten Khusus untuk Artikel
     if (item.type === 'artikel') {
         contentHTML += `
            <div class="artikel-footer">
@@ -96,9 +95,7 @@ function createCard(item) {
                 </div>
             </div>
         `;
-    } 
-    // Konten Khusus untuk Video
-    else if (item.type === 'video') {
+    } else if (item.type === 'video') {
         contentHTML += `
             <div class="video-footer">
                 <div class="item-actions">
@@ -113,19 +110,19 @@ function createCard(item) {
     return card;
 }
 
-
 function renderPortfolio(data) {
     container.innerHTML = ''; 
     data.forEach(item => {
         container.appendChild(createCard(item));
     });
+    
+    // Setelah render, tambahkan event listener untuk item baru
+    addPortfolioItemAnimations();
 }
-
 
 function filterByButton(filterType) {
     const searchTerm = searchInput.value.toLowerCase();
     
-
     filterButtons.forEach(btn => {
         btn.classList.remove('active');
         if (btn.getAttribute('data-filter') === filterType) {
@@ -140,38 +137,124 @@ function filterByButton(filterType) {
     });
 
     renderPortfolio(filteredData);
+    
+    // Animasikan konten baru setelah filter
+    setTimeout(() => {
+        animateNewContent();
+    }, 100);
 }
-
 
 function filterContent() {
     const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
     filterByButton(activeFilter);
 }
 
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const filterType = this.getAttribute('data-filter');
-        filterByButton(filterType);
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    renderPortfolio(portfolioData);
-});
-
-const hamburger = document.getElementById("hamburger");
-const menu = document.getElementById("menu");
-
-hamburger.addEventListener("click", () => {
-  menu.classList.toggle("show");
-  hamburger.classList.toggle("active");
-});
-
-document.addEventListener('DOMContentLoaded', function() {
+// ===== ANIMASI FUNCTIONS =====
+function animateElements() {
+    const header = document.querySelector('.portfolio-header');
+    if (header) header.style.animation = 'fadeInUp 0.8s ease forwards';
     
+    const controls = document.querySelector('.controls-container');
+    if (controls) controls.style.animation = 'fadeInUp 0.8s ease 0.2s forwards';
+    
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach((btn, index) => {
+        btn.style.animation = `fadeIn 0.5s ease ${0.3 + (index * 0.1)}s forwards`;
+    });
+    
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) searchInput.style.animation = 'fadeInUp 0.8s ease 0.3s forwards';
+    
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    portfolioItems.forEach((item, index) => {
+        item.style.animation = `fadeInUp 0.8s ease ${0.3 + (index * 0.1)}s forwards`;
+    });
+    
+    const footer = document.querySelector('.footer');
+    if (footer) footer.style.animation = 'fadeIn 1s ease 0.5s forwards';
+}
 
+function animateNewContent() {
+    const newItems = document.querySelectorAll('.portfolio-item:not(.animated)');
+    newItems.forEach((item, index) => {
+        item.classList.add('animated');
+        item.style.animation = `fadeInUp 0.5s ease ${index * 0.1}s forwards`;
+    });
+}
+
+function addPortfolioItemAnimations() {
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.boxShadow = '0 15px 40px rgba(88, 166, 255, 0.3)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '';
+        });
+    });
+}
+
+// ===== HAMBURGER MENU =====
+function setupHamburgerMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    
+    // Buat overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+    
+    // Fungsi toggle menu
+    function toggleMenu() {
+        const opened = menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        overlay.classList.toggle('active');
+        
+        // Accessibility
+        hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false');
+        
+        // Prevent body scroll ketika menu terbuka
+        if (opened) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
+    
+    // Event listener untuk hamburger
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleMenu();
+    });
+    
+    // Tutup menu saat klik overlay
+    overlay.addEventListener('click', function() {
+        if (menu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+    
+    // Tutup menu saat klik link
+    document.querySelectorAll('.menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (menu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+    
+    // Tutup menu saat resize ke desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && menu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+}
+
+// ===== LOADING SCREEN =====
+function setupLoadingScreen() {
     const loadingScreen = document.createElement('div');
     loadingScreen.className = 'loading-screen';
     loadingScreen.id = 'loadingScreen';
@@ -182,54 +265,43 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
     document.body.prepend(loadingScreen);
-
+    
     window.addEventListener('load', function() {
         setTimeout(function() {
             loadingScreen.style.opacity = '0';
             loadingScreen.style.visibility = 'hidden';
+            
+            // Trigger animations
             animateElements();
-        }, 1000);
+        }, 800);
     });
-    elemen
-    function animateElements() {
-        const header = document.querySelector('.portfolio-header');
-        if (header) header.style.animation = 'fadeInUp 0.8s ease forwards';
-        
-        const controls = document.querySelector('.controls-container');
-        if (controls) controls.style.animation = 'fadeInUp 0.8s ease 0.2s forwards';
-        
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach((btn, index) => {
-            btn.style.animation = `fadeIn 0.5s ease ${0.3 + (index * 0.1)}s forwards`;
-        });
-        
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) searchInput.style.animation = 'fadeInUp 0.8s ease 0.3s forwards';
-        
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        portfolioItems.forEach((item, index) => {
-            item.style.animation = `fadeInUp 0.8s ease ${0.3 + (index * 0.1)}s forwards`;
-        });
-        
-        const footer = document.querySelector('.footer');
-        if (footer) footer.style.animation = 'fadeIn 1s ease 0.5s forwards';
-    }
+}
+
+// ===== INITIALIZE EVERYTHING =====
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Setup loading screen
+    setupLoadingScreen();
     
-    document.querySelectorAll('.filter-btn').forEach(button => {
+    // 2. Setup hamburger menu
+    setupHamburgerMenu();
+    
+    // 3. Render portfolio
+    renderPortfolio(portfolioData);
+    
+    // 4. Setup filter buttons
+    filterButtons.forEach(button => {
         button.addEventListener('click', function() {
+            const filterType = this.getAttribute('data-filter');
+            filterByButton(filterType);
+            
+            // Button click animation
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
             }, 150);
-            
-  
-            document.querySelectorAll('.filter-btn').forEach(b => {
-                b.classList.remove('active');
-            });
-            this.classList.add('active');
         });
         
- 
+        // Button hover effects
         button.addEventListener('mouseenter', function() {
             if (!this.classList.contains('active')) {
                 this.style.transform = 'translateY(-3px)';
@@ -243,19 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    document.querySelectorAll('.portfolio-item').forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-            this.style.boxShadow = '0 15px 40px rgba(88, 166, 255, 0.3)';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '';
-        });
-    });
-    
- 
+    // 5. Setup social media animations
     document.querySelectorAll('.socialmedia a').forEach(icon => {
         icon.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-5px) scale(1.1)';
@@ -266,69 +326,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-
-    function animateNewContent() {
-        const newItems = document.querySelectorAll('.portfolio-item:not(.animated)');
-        newItems.forEach((item, index) => {
-            item.classList.add('animated');
-            item.style.animation = `fadeInUp 0.8s ease ${index * 0.1}s forwards`;
+    // 6. Setup search input event
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            filterContent();
         });
     }
 });
 
-// Hamburger Menu Script
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-    
-    // Buat overlay element
-    const overlay = document.createElement('div');
-    overlay.className = 'menu-overlay';
-    document.body.appendChild(overlay);
-    
-    // Fungsi toggle menu
-    function toggleMenu() {
-        hamburger.classList.toggle('active');
-        menu.classList.toggle('active');
-        overlay.classList.toggle('active');
-    }
-    
-    // Event listener untuk hamburger
-    hamburger.addEventListener('click', function(e) {
-        e.stopPropagation();
-            const opened = menu.classList.toggle("active");
-            hamburger.classList.toggle("active");
-            // accessibility: announce state
-            hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false');
-
-            // focus and highlight first menu item when opened
-            const firstLink = menu.querySelector('a');
-            if (opened && firstLink) {
-                firstLink.classList.add('highlight');
-                try { firstLink.focus({ preventScroll: true }); } catch(e) { firstLink.focus(); }
-            } else if (firstLink) {
-                firstLink.classList.remove('highlight');
-            }
-    });
-    
-    // Tutup menu saat klik overlay
-    overlay.addEventListener('click', function() {
-        toggleMenu();
-    });
-    
-    // Tutup menu saat klik link
-    document.querySelectorAll('.menu a').forEach(link => {
-        link.addEventListener('click', function() {
-            toggleMenu();
-        });
-    });
-    
-    // Tutup menu saat resize ke desktop
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            hamburger.classList.remove('active');
-            menu.classList.remove('active');
-            overlay.classList.remove('active');
-        }
-    });
-});
+// Export untuk digunakan di filterContent (jika diperlukan)
+window.filterContent = filterContent;
