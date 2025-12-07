@@ -42,7 +42,7 @@ const portfolioData = [
         type: 'artikel',
         title: 'Printer Sharing',
         description: 'Bagai mana cara agar 1 printer dapat digunakan bersama-sama oleh beberapa komputer dalam suatu lab.',
-        imageUrl: 'https://support.brother.com/g/b/img/faqend/faqp00001616_001/us/en/29650/nonnet02.gif',
+        imageUrl: '/error404.html',
         category: 'Jaringan', 
         url: '#'
     },
