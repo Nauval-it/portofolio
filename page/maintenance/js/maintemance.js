@@ -1,23 +1,18 @@
-// true = semua halaman kena maintenance
-// false = hanya pages tertentu yang kena
-const globalMaintenance = true;
-const maintenancePages = ['/page/certificate/certificate.html'];
+const globalMaintenance = false;
+const maintenancePages = ['/page/certificate/certificate.html']; 
 const whitelistPages = [];
 
-// Atur maintenance
+const maintenanceRedirect = '/page/maintenance/maintenance.html';
+
 (function () {
-    const page = window.location.pathname.split("/").pop();
+    const page = window.location.pathname;
 
     let needMaintenance = false;
 
-    // --- 1. GLOBAL MAINTENANCE MODE ---
-    if (globalMaintenance) {
-        if (!whitelistPages.includes(page)) {
-            needMaintenance = true;
-        }
+    if (globalMaintenance && !whitelistPages.includes(page)) {
+        needMaintenance = true;
     }
 
-    // --- 2. MAINTENANCE MODE PER HALAMAN ---
     if (!globalMaintenance && maintenancePages.includes(page)) {
         needMaintenance = true;
     }
@@ -25,14 +20,14 @@ const whitelistPages = [];
     if (!needMaintenance) return;
 
     document.body.innerHTML = `
-        <div id="checking-container" style="
+        <div style="
             display:flex;
             align-items:center;
             justify-content:center;
             height:100vh;
             background:#0d0d0d;
             color:white;
-            font-family:Poppins, sans-serif;
+            font-family:Poppins,sans-serif;
             font-size:2rem;
             flex-direction:column;
         ">
@@ -48,7 +43,7 @@ const whitelistPages = [];
     }, 400);
 
     setTimeout(() => {
-        window.location.href = "/page/maintenance/maintenance.html";
+        window.location.href = maintenanceRedirect;
     }, 2500);
 
 })();
