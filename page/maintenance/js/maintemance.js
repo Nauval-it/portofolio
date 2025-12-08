@@ -5,20 +5,24 @@ const whitelistPages = [];
 const maintenanceRedirect = '/page/maintenance/maintenance.html';
 
 (function () {
-    const page = window.location.pathname;
+    // normalisasi path: hapus trailing slash + lowercase
+    const page = window.location.pathname.replace(/\/$/, '').toLowerCase();
 
     let needMaintenance = false;
 
+    // global maintenance
     if (globalMaintenance && !whitelistPages.includes(page)) {
         needMaintenance = true;
     }
 
-    if (!globalMaintenance && maintenancePages.includes(page)) {
+    // per halaman maintenance
+    if (!globalMaintenance && maintenancePages.map(p => p.toLowerCase()).includes(page)) {
         needMaintenance = true;
     }
 
     if (!needMaintenance) return;
 
+    // tampil loading
     document.body.innerHTML = `
         <div style="
             display:flex;
@@ -42,8 +46,11 @@ const maintenanceRedirect = '/page/maintenance/maintenance.html';
         document.getElementById("dots").textContent = ".".repeat(d);
     }, 400);
 
+    // redirect ke halaman maintenance
     setTimeout(() => {
-        window.location.href = maintenanceRedirect;
+        if (window.location.pathname !== maintenanceRedirect) {
+            window.location.href = maintenanceRedirect;
+        }
     }, 2500);
 
 })();
