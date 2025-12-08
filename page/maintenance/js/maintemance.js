@@ -1,12 +1,12 @@
 const globalMaintenance = false;
-const maintenancePages = ['/page/certificate/certificate.html']; 
+const maintenancePages = ['/page/certificate/certificate']; 
 const whitelistPages = [];
 
 const maintenanceRedirect = '/page/maintenance/maintenance.html';
 
 (function () {
-    // normalisasi path: hapus trailing slash + lowercase
-    const page = window.location.pathname.replace(/\/$/, '').toLowerCase();
+    // normalisasi path: hapus trailing slash + hapus .html + lowercase
+    const page = window.location.pathname.replace(/\/$/, '').replace(/\.html$/, '').toLowerCase();
 
     let needMaintenance = false;
 
