@@ -5,21 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const menu = document.getElementById('menu');
     
     if (hamburger && menu) {
-        // Buat overlay
         const overlay = document.createElement('div');
         overlay.className = 'menu-overlay';
         document.body.appendChild(overlay);
         
-        // Fungsi toggle yang lengkap
         function toggleMenu() {
             const opened = menu.classList.toggle('active');
             hamburger.classList.toggle('active');
             overlay.classList.toggle('active');
             
-            // Accessibility
             hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false');
             
-            // Focus management
             const firstLink = menu.querySelector('a');
             if (opened && firstLink) {
                 firstLink.classList.add('highlight');
@@ -32,24 +28,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 firstLink.classList.remove('highlight');
             }
             
-            // Prevent body scroll when menu is open
             document.body.style.overflow = opened ? 'hidden' : 'auto';
         }
         
-        // Hamburger click
         hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
             toggleMenu();
         });
         
-        // Overlay click
         overlay.addEventListener('click', function() {
             if (menu.classList.contains('active')) {
                 toggleMenu();
             }
         });
         
-        // Menu links click
         document.querySelectorAll('.menu a').forEach(link => {
             link.addEventListener('click', function() {
                 if (menu.classList.contains('active')) {
@@ -57,23 +49,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-        
-        // Close on resize to desktop
+
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768 && menu.classList.contains('active')) {
                 toggleMenu();
             }
         });
-        
-        // Close menu with Escape key
+
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && menu.classList.contains('active')) {
                 toggleMenu();
             }
         });
     }
-    
-    // ========== LOADING SCREEN ==========
+
     const loadingScreen = document.getElementById('loadingScreen');
     if (loadingScreen) {
         window.addEventListener('load', function() {
@@ -81,15 +70,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadingScreen.style.opacity = '0';
                 loadingScreen.style.visibility = 'hidden';
                 
-                // Trigger entrance animations
                 document.querySelectorAll('.animate-on-scroll').forEach(element => {
                     element.classList.add('animate__animated', 'animate__fadeInUp');
                 });
-            }, 1000); // Reduced from 1500ms
+            }, 1000); 
         });
     }
     
-    // ========== TYPING ANIMATION ==========
     const typingElement = document.getElementById('element');
     if (typingElement) {
         var typed = new Typed('#element', {
@@ -103,8 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             smartBackspace: true
         });
     }
-    
-    // ========== SCROLL ANIMATIONS ==========
+
     function handleScrollAnimations() {
         const elements = document.querySelectorAll('.animate-on-scroll, .animate-card');
         const windowHeight = window.innerHeight;
@@ -119,8 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.classList.add('animate__animated', 'animate__fadeInUp');
             }
         });
-        
-        // Scroll Progress Indicator
+    
         const scrollProgress = document.querySelector('.scroll-progress');
         if (scrollProgress) {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -129,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollProgress.style.width = scrolled + "%";
         }
         
-        // Back to Top Button
         const backToTop = document.getElementById('backToTop');
         if (backToTop) {
             if (scrollY > 300) {
@@ -147,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('load', handleScrollAnimations);
     }
     
-    // ========== BACK TO TOP ==========
     const backToTopBtn = document.getElementById('backToTop');
     if (backToTopBtn) {
         backToTopBtn.addEventListener('click', function() {
@@ -158,7 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ========== SMOOTH SCROLL FOR ANCHOR LINKS ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -176,14 +158,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ========== PARALLAX EFFECT ==========
     function handleParallax() {
         const scrolled = window.pageYOffset;
         const parallaxElements = document.querySelectorAll('.about-container, .project-card');
         
         parallaxElements.forEach(element => {
-            const rate = scrolled * -0.3; // Reduced from -0.5 for smoother effect
-            element.style.transform = `translateY(${rate * 0.05}px)`; // Reduced multiplier
+            const rate = scrolled * -0.3;
+            element.style.transform = `translateY(${rate * 0.05}px)`;
         });
     }
     
@@ -192,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('load', handleParallax);
     }
     
-    // ========== PROJECT CARD HOVER EFFECTS ==========
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-8px) scale(1.02)'; // Reduced from -10px
@@ -204,8 +184,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ========== INITIALIZE ANIMATIONS ==========
-    // Trigger initial scroll check
     setTimeout(() => {
         handleScrollAnimations();
         handleParallax();
@@ -213,3 +191,38 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('✅ All scripts loaded successfully');
 });
+
+const validPages = [
+    '/',
+    '/index.html',
+    '/page/myporto/myporto.html',
+    '/page/error404/error404.html',
+    '/css/style.css',
+    '/js/script.js',
+    '/assets/'
+];
+
+function checkPageValidity() {
+    const currentPath = window.location.pathname;
+    const currentUrl = window.location.href;
+    
+    if (currentPath.match(/\.(css|js|jpg|png|svg|ico)$/i)) {
+        return;
+    }
+    
+    const isValid = validPages.some(page => 
+        currentPath === page || 
+        currentPath.startsWith(page) ||
+        currentUrl.includes(page)
+    );
+    
+    if (!isValid && currentPath !== '/page/error404/error404.html' && !currentPath.includes('404.html')) {
+        console.log('Redirecting to 404:', currentPath);
+        window.location.href = '/page/error404/error404.html';
+    }
+}
+
+window.addEventListener('load', checkPageValidity);
+
+window.addEventListener('popstate', checkPageValidity);
+
