@@ -1,6 +1,6 @@
 // true = semua halaman kena maintenance
 // false = hanya pages tertentu yang kena
-const globalMaintenance = false;
+const globalMaintenance = true;
 const maintenancePages = ['/page/certificate/certificate.html'];
 const whitelistPages = [];
 
