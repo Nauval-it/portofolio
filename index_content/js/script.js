@@ -77,19 +77,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    const typingElement = document.getElementById('element');
-    if (typingElement) {
-        var typed = new Typed('#element', {
-            strings: ['Networking Student', 'X TKJ - SMK Pesat IT XPro', 'Become an Expert Cyber Engineer'],
-            loop: true,
-            typeSpeed: 120,
-            backSpeed: 50, 
-            backDelay: 1500,
-            startDelay: 500,
-            cursorChar: '',
-            smartBackspace: true
-        });
-    }
+    // const typingElement = document.getElementById('element');
+    // if (typingElement) {
+    //     var typed = new Typed('#element', {
+    //         strings: ['Networking Student', 'X TKJ - SMK Pesat IT XPro', 'Become an Expert Cyber Engineer'],
+    //         loop: true,
+    //         typeSpeed: 120,
+    //         backSpeed: 50, 
+    //         backDelay: 1500,
+    //         startDelay: 500,
+    //         cursorChar: '',
+    //         smartBackspace: true
+    //     });
+    // }
 
     function handleScrollAnimations() {
         const elements = document.querySelectorAll('.animate-on-scroll, .animate-card');
@@ -225,4 +225,5 @@ function checkPageValidity() {
 window.addEventListener('load', checkPageValidity);
 
 window.addEventListener('popstate', checkPageValidity);
+
 

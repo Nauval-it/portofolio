@@ -64,6 +64,59 @@ nav a:hover::after {
     visibility: visible;
 }
 
+.lang-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.15);
+    padding: 12px 18px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 16px;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.lang-box:hover {
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 0 10px rgba(237, 233, 233, 0.829);
+    transform: translateY(-5px);
+}
+
+.lang-box img {
+    width: auto;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 3px; 
+}
+
+#langLabel {
+    font-weight: 500;
+}
+
+/* Select disembunyikan, tapi tetap berfungsi */
+#langSwitcher {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Panah dropdown */
+.lang-box::after {
+    content: "▼";
+    position: static;
+    right: 15px;
+    color: white;
+    font-size: 14px;
+    pointer-events: none;
+}
+
 /* ------------------- ABOUT ME ------------------- */
 .about-container {
     display: flex;
@@ -656,5 +709,26 @@ color: white;
         opacity: 0.7;
         font-size: 12px;
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-text h1 {
+        font-size: 24px;
+    }
+
+    .about-photo {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .projects h1 {
+        font-size: 24px;
+    }
+
+    .project-card .card-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 }
