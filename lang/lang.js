@@ -20,7 +20,6 @@ function applyLanguage(lang) {
     currentLang = lang;
     localStorage.setItem("lang", lang);
 
-    // === STATIC TEXT ===
     document.querySelectorAll("[data-lang]").forEach(el => {
         const key = el.dataset.lang;
         if (LANG[lang]?.[key]) {
@@ -28,7 +27,6 @@ function applyLanguage(lang) {
         }
     });
 
-    // === PLACEHOLDER ===
     document.querySelectorAll("[data-lang-placeholder]").forEach(el => {
         const key = el.dataset.langPlaceholder;
         if (LANG[lang]?.[key]) {
@@ -36,12 +34,12 @@ function applyLanguage(lang) {
         }
     });
 
-    // === TITLE ===
     if (LANG[lang]?.page_title) {
         document.title = LANG[lang].page_title;
     }
 
-    // === 🔥 DYNAMIC PAGE (OPTIONAL) ===
+    updateTyped(lang);
+
     if (window.renderPortfolioLang) {
         window.renderPortfolioLang(LANG[lang]);
     }
@@ -93,3 +91,27 @@ async function loadLangData() {
 }
 
 loadLangData();
+
+let typedInstance = null;
+
+function updateTyped(lang) {
+    const el = document.getElementById("element");
+    if (!el) return;
+
+    if (!LANG[lang] || !LANG[lang].typed_texts) return;
+
+    if (typedInstance) {
+        typedInstance.destroy();
+        el.textContent = "";
+    }
+
+    typedInstance = new Typed("#element", {
+        strings: LANG[lang].typed_texts,
+        loop: true,
+        typeSpeed: 120,
+        backSpeed: 50,
+        backDelay: 1500,
+        startDelay: 500,
+        cursorChar: ""
+    });
+}

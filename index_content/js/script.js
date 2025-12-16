@@ -76,20 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1000); 
         });
     }
-    
-    // const typingElement = document.getElementById('element');
-    // if (typingElement) {
-    //     var typed = new Typed('#element', {
-    //         strings: ['Networking Student', 'X TKJ - SMK Pesat IT XPro', 'Become an Expert Cyber Engineer'],
-    //         loop: true,
-    //         typeSpeed: 120,
-    //         backSpeed: 50, 
-    //         backDelay: 1500,
-    //         startDelay: 500,
-    //         cursorChar: '',
-    //         smartBackspace: true
-    //     });
-    // }
 
     function handleScrollAnimations() {
         const elements = document.querySelectorAll('.animate-on-scroll, .animate-card');

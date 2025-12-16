@@ -44,38 +44,37 @@
         "all_rights": "All Rights Reserved",
         "artikel_1_title": "What Is a Computer Network",
         "myporto_title": "Portfolio",
-  "myporto_desc": "These are my works during my studies at SMK Pesat IT XPro",
-  "myporto_search": "Search content...",
-  "myporto_filter_all": "All",
-  "myporto_filter_artikel": "Article",
-  "myporto_filter_video": "Video",
+        "myporto_desc": "These are my works during my studies at SMK Pesat IT XPro",
+        "myporto_search": "Search content...",
+        "myporto_filter_all": "All",
+        "myporto_filter_artikel": "Article",
+        "myporto_filter_video": "Video",
+        "btn_view": "View",
+        "btn_visit": "Visit Video",
+        "artikel_1_desc": "Currently, I am studying the basics of computer networking at school. A network is formed when devices are connected through wired or wireless media, where each device must have an identity so data can be sent to the correct destination.",
+    
+        "artikel_2_title": "Network Topology",
+        "artikel_2_desc": "When discussing networks, we need a map or design that shows how network devices are connected to each other.",
+    
+        "artikel_3_title": "Network Devices",
+        "artikel_3_desc": "When talking about networks, there are always devices involved. This article explains what they are and their functions.",
+    
+        "artikel_4_title": "Wireless vs Wired",
+        "artikel_4_desc": "A network requires a transmission medium, which can be divided into two main types: wireless and wired.",
+    
+        "artikel_5_title": "Printer Sharing",
+        "artikel_5_desc": "How to allow one printer to be shared and used by multiple computers in a laboratory or office.",
 
-  "btn_view": "View",
-  "btn_visit": "Visit Video",
-    "artikel_1_desc": "Currently, I am studying the basics of computer networking at school. A network is formed when devices are connected through wired or wireless media, where each device must have an identity so data can be sent to the correct destination.",
+        "video_1_title": "Building WLAN and LAN Networks",
+        "video_1_desc": "A complete tutorial on building LAN and WLAN networks from scratch until they are ready to use.",
     
-    "artikel_2_title": "Network Topology",
-    "artikel_2_desc": "When discussing networks, we need a map or design that shows how network devices are connected to each other.",
-    
-    "artikel_3_title": "Network Devices",
-    "artikel_3_desc": "When talking about networks, there are always devices involved. This article explains what they are and their functions.",
-    
-    "artikel_4_title": "Wireless vs Wired",
-    "artikel_4_desc": "A network requires a transmission medium, which can be divided into two main types: wireless and wired.",
-    
-    "artikel_5_title": "Printer Sharing",
-    "artikel_5_desc": "How to allow one printer to be shared and used by multiple computers in a laboratory or office.",
+        "video_2_title": "Static Routing in Cisco Packet Tracer",
+        "video_2_desc": "A beginner-friendly tutorial on how to configure static routing in Cisco Packet Tracer.",
 
-    "video_1_title": "Building WLAN and LAN Networks",
-    "video_1_desc": "A complete tutorial on building LAN and WLAN networks from scratch until they are ready to use.",
-    
-    "video_2_title": "Static Routing in Cisco Packet Tracer",
-    "video_2_desc": "A beginner-friendly tutorial on how to configure static routing in Cisco Packet Tracer.",
-
-    "cat_jaringan": "Networking",
-    "cat_topologi": "Topology",
-    "cat_configuration": "Configuration",
-    "cat_routing": "Routing"
+        "cat_jaringan": "Networking",
+        "cat_topologi": "Topology",
+        "cat_configuration": "Configuration",
+        "cat_routing": "Routing"
     },
 
     "id": {
