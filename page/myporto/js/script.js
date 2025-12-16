@@ -53,7 +53,7 @@ function setupLoadingScreen() {
     loadingScreen.innerHTML = `
         <div class="loading-content">
             <div class="loader"></div>
-            <h2 class="loading-text">Memuat Portfolio...</h2>
+            <h2 class="loading-text" data-lang='loading'></h2>
         </div>
     `;
     document.body.prepend(loadingScreen);

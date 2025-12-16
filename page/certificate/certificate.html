@@ -9,6 +9,12 @@
     </head>
     <body>
         <script src="/page/maintenance/js/maintemance.js"></script>
+        <script src="/lang/lang.js"></script>
+        <script>
+            document.getElementById("langSwitcher").addEventListener("change", function () {
+                applyLanguage(this.value);
+            });
+        </script>
         <script src="/page/certificate/js/script.js"></script>
     </body>
     </html>

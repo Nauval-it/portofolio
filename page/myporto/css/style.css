@@ -35,6 +35,59 @@ nav .img {
     left: 40px;
 }
 
+.lang-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.15);
+    padding: 12px 18px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 16px;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.lang-box:hover {
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 0 10px rgba(237, 233, 233, 0.829);
+    transform: translateY(-5px);
+}
+
+.lang-box img {
+    width: auto;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 3px; 
+}
+
+#langLabel {
+    font-weight: 500;
+}
+
+/* Select disembunyikan, tapi tetap berfungsi */
+#langSwitcher {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Panah dropdown */
+.lang-box::after {
+    content: "▼";
+    position: static;
+    right: 15px;
+    color: white;
+    font-size: 14px;
+    pointer-events: none;
+}
+
 .menu-nav {
     font-size: 24px;
     padding: 20px 12px;
@@ -264,9 +317,11 @@ nav a:hover::after {
 }
 
 .btn-view {
-    background-color: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
 }
 
 .btn-view:hover {
@@ -274,12 +329,15 @@ nav a:hover::after {
     color: var(--bg-color);
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(66, 153, 225, 0.3);
+    transform: translateY(-2px);
 }
 
 .btn-visit-video {
     background-color: var(--primary-color);
     border: 2px solid var(--primary-color);
     color: var(--bg-color);
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
 }
 
 .btn-visit-video:hover {
@@ -554,6 +612,13 @@ color: white;
         padding: 10px 18px;
         font-size: 14px;
     }
+
+    .item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
     
     /* Portfolio Grid */
     .portfolio-container {

@@ -18,6 +18,69 @@ body {
     color: var(--text-color);
 }
 
+.nav {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    background: rgba(11, 21, 32, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.lang-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.15);
+    padding: 12px 18px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 16px;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.lang-box:hover {
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 0 10px rgba(237, 233, 233, 0.829);
+    transform: translateY(-5px);
+}
+
+.lang-box img {
+    width: auto;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 3px; 
+}
+
+#langLabel {
+    font-weight: 500;
+}
+
+/* Select disembunyikan, tapi tetap berfungsi */
+#langSwitcher {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Panah dropdown */
+.lang-box::after {
+    content: "▼";
+    position: static;
+    right: 15px;
+    color: white;
+    font-size: 14px;
+    pointer-events: none;
+}
+
 .wrapper {
     padding: 40px;
     min-height: 100vh;
@@ -43,9 +106,19 @@ body {
     margin-bottom: 10px;
 }
 
-.card p {
-    line-height: 1.6;
-    opacity: 0.9;
+.card .message {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.card .maintemance, .card .period {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.illustration {
+    margin-top: 30px;
+    text-align: center;
 }
 
 .info-block {
