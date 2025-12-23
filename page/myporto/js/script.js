@@ -116,4 +116,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+const validPages = [
+    '/',
+    '/index.html',
+    '/page/myporto/myporto.html',
+    '/page/error404/error404.html',
+    '/css/style.css',
+    '/js/script.js',
+    '/assets/'
+];
+
+function checkPageValidity() {
+    const currentPath = window.location.pathname;
+    const currentUrl = window.location.href;
+    
+    if (currentPath.match(/\.(css|js|jpg|png|svg|ico)$/i)) {
+        return;
+    }
+    
+    const isValid = validPages.some(page => 
+        currentPath === page || 
+        currentPath.startsWith(page) ||
+        currentUrl.includes(page)
+    );
+    
+    if (!isValid && currentPath !== '/page/error404/error404.html' && !currentPath.includes('404.html')) {
+        console.log('Redirecting to 404:', currentPath);
+        window.location.href = '/page/error404/error404.html';
+    }
+}
+
+window.addEventListener('load', checkPageValidity);
+
+window.addEventListener('popstate', checkPageValidity);
+
 window.filterContent = filterContent;
