@@ -1,5 +1,5 @@
 const globalMaintenance = false;
-const maintenancePages = ['']; 
+const maintenancePages = []; 
 const whitelistPages = [];
 
 const maintenanceRedirect = '/page/maintenance/maintenance.html';
