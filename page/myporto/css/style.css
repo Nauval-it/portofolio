@@ -651,4 +651,34 @@ color: white;
         height: auto;
         object-fit: contain;
     }
+
+    body {
+    overflow-x: hidden;
+  }
+
+  section {
+    padding: 60px 14px;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    height: 64px;
+    padding: 0 12px;
+  }
+
+  nav a {
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  /* ===== LANGUAGE SWITCH ===== */
+  .lang-box {
+    padding: 8px 12px;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .lang-box img {
+    height: 16px;
+  }
 }

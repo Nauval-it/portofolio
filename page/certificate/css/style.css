@@ -168,10 +168,7 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 420px;
   width: 100%;
-  margin-top: 2rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
+  margin: 0;
   justify-content: center;
   justify-items: center;
 }
@@ -718,5 +715,132 @@ color: white;
         font-size: 12px;
         text-align: center;
     }
+
+
 }
+
+@media (max-width: 512px) {
+
+  /* ===== BODY ===== */
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    padding: 60px 14px;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    height: 64px;
+    padding: 0 12px;
+  }
+
+  nav a {
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  /* ===== LANGUAGE SWITCH ===== */
+  .lang-box {
+    padding: 8px 12px;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .lang-box img {
+    height: 16px;
+  }
+
+  /* ===== SERTIFICATION ===== */
+  /* ===== CERTIFICATION SECTION ===== */
+ .sertification .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  /* card aman, center */
+  .sertification .card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* image gak dorong ke kanan */
+  .sertification .img,
+  .sertification img {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
+
+  /* text biar gak kepanjangan */
+  .title_card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .hover-switch {
+    height: 200px;
+  }
+
+  .title_card h1 {
+    font-size: 18px;
+  }
+
+  .title_card p {
+    font-size: 13px;
+  }
+
+  /* ===== CLIENTS ===== */
+  .clients h2 {
+    font-size: 32px;
+  }
+
+  .clients-desc {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .client-card {
+    min-width: 150px;
+    height: 80px;
+  }
+
+  .client-card img {
+    max-width: 90px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding: 40px 15px;
+  }
+
+  .socialmedia a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .socialmedia svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* ===== BACK TO TOP ===== */
+  .back-to-top {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+}
+
 
