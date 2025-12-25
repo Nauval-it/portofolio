@@ -17,6 +17,33 @@ const portfolioData = [
         categoryKey: 'cat_topologi',
         url: 'https://medium.com/@nauvalx3/topoligi-jaringan-22e4091318c9'
     },
+    {
+        id: 3,
+        type: 'artikel',
+        titleKey: 'artikel_3_title',
+        descKey: 'artikel_3_desc',
+        imageUrl: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*MCJhazp900fkivotutC9Pg.jpeg',
+        category: 'cat_jaringan',
+        url: 'https://medium.com/@nauvalx3/perangkat-jaringan-itu-apa-aja-sih-05167c0d21ef'
+    },
+    {
+        id: 4,
+        type: 'artikel',
+        titleKey: 'artikel_4_title',
+        descKey: 'artikel_4_desc',
+        imageUrl: 'https://www.inlink.systems/wp-content/uploads/2024/01/Inlink_wired_vs_wireless_network.png',
+        category: 'cat_jaringan',
+        url: 'https://medium.com/@nauvalx3/apa-bedanya-wireless-dan-wired-44b27adb0782'
+    },
+    {
+        id: 5,
+        type: 'artikel',
+        titleKey: 'artikel_5_title',
+        descKey: 'artikel_5_desc',
+        imageUrl: 'https://miro.medium.com/v2/resize:fit:640/format:webp/1*K_MP7pxN30TJLE5HuY_i1A.png',
+        category: 'cat_jaringan',
+        url: 'https://medium.com/@nauvalx3/tutorial-menggunakan-printer-sharing-68e3f4a7dffe'
+    },
     // ... artikel 3-5
     {
         id: 6,
