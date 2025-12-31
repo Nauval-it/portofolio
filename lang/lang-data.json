@@ -42,7 +42,6 @@
         "learn_back": "Back",
         "footer_desc": "This website is made to showcase the works and projects that I have completed as a student at SMK Pesat IT XPro.",
         "all_rights": "© 2025 Nauval Nurfadhlullah. All rights reserved",
-        "artikel_1_title": "What Is a Computer Network",
         "myporto_title": "Portfolio",
         "myporto_desc": "These are my works during my studies at SMK Pesat IT XPro",
         "myporto_search": "Search content...",
@@ -51,25 +50,30 @@
         "myporto_filter_video": "Video",
         "btn_view": "View",
         "btn_visit": "Visit Video",
+
+        "artikel_1_title": "What Is a Computer Network",
         "artikel_1_desc": "Currently, I am studying the basics of computer networking at school. A network is formed when devices are connected through wired or wireless media, where each device must have an identity so data can be sent to the correct destination.",
     
         "artikel_2_title": "Network Topology",
-        "artikel_2_desc": "When discussing networks, we need a map or design that shows how network devices are connected to each other.",
+        "artikel_2_desc": "Network topology is the layout or structure of how devices are connected within a network. Topology determines how data flows between devices and affects network performance, scalability, and troubleshooting. Common topologies include star, bus, ring, and mesh.",
     
         "artikel_3_title": "Network Devices",
-        "artikel_3_desc": "When talking about networks, there are always devices involved. This article explains what they are and their functions.",
+        "artikel_3_desc": "Network devices are essential components in building a computer network. Each device has its own role in connecting, managing, and controlling data traffic between devices. This section provides a general overview of common network devices, their basic functions, and how they operate within a network.",
     
         "artikel_4_title": "Wireless vs Wired",
-        "artikel_4_desc": "A network requires a transmission medium, which can be divided into two main types: wireless and wired.",
+        "artikel_4_desc": "Wired and wireless networks are commonly used to connect devices in everyday life. Although they serve the same purpose, each network type works differently and has its own advantages and limitations. This section provides an overview of the media used, speed and stability, security aspects, and common use cases.",
     
         "artikel_5_title": "Printer Sharing",
-        "artikel_5_desc": "How to allow one printer to be shared and used by multiple computers in a laboratory or office.",
+        "artikel_5_desc": "Printer Sharing is a network feature that allows a single printer to be shared and used by multiple computers over a local network (LAN or Wi-Fi). This feature eliminates the need to install a printer on each computer, making printing more efficient and cost-effective.",
+
+        "artikel_6_title": "Folder Sharing",
+        "artikel_6_desc": "Folder Sharing is a network feature that allows a single folder to be accessed and used by multiple computers simultaneously over a local network (LAN or Wi-Fi). This feature makes data sharing easier, faster, and more efficient without the need for external storage devices such as flash drives.",
 
         "video_1_title": "Building WLAN and LAN Networks",
-        "video_1_desc": "A complete tutorial on building LAN and WLAN networks from scratch until they are ready to use.",
-    
+        "video_1_desc": "This tutorial explains the steps to build LAN and WLAN networks, starting from planning, device selection, to basic configuration to ensure a stable and efficient network.",
+
         "video_2_title": "Static Routing in Cisco Packet Tracer",
-        "video_2_desc": "A beginner-friendly tutorial on how to configure static routing in Cisco Packet Tracer.",
+        "video_2_desc": "A complete explanation of static routing concepts and configuration using Cisco Packet Tracer, suitable for beginners who want to understand inter-network communication.",
 
         "cat_jaringan": "Networking",
         "cat_topologi": "Topology",
@@ -138,20 +142,28 @@
         "btn_view": "Lihat",
         "btn_visit": "Kunjungi Video",
         "artikel_1_title": "Apa Itu Jaringan",
-        "artikel_1_desc": "Saat ini saya sedang belajar di sekolah tentang dasar jaringan komputer...",
+        "artikel_1_desc": "Saat ini saya sedang mempelajari dasar-dasar teknologi jaringan di sekolah. Jaringan terbentuk ketika beberapa perangkat saling terhubung melalui media kabel atau nirkabel. Setiap perangkat harus memiliki identitas yang unik agar data dapat sampai ke tujuan dengan benar.",
+
         "artikel_2_title": "Topologi Jaringan",
-        "artikel_2_desc": "Bicara tentang jaringan tentunya kita harus membuat rancangan.",
+        "artikel_2_desc": "Topologi jaringan adalah bentuk atau tata letak bagaimana perangkat-perangkat saling terhubung dalam sebuah jaringan. Topologi menentukan alur pengiriman data antar perangkat serta memengaruhi kinerja, skalabilitas, dan kemudahan dalam pemeliharaan jaringan. Contoh topologi yang umum digunakan antara lain star, bus, ring, dan mesh.",
+
         "artikel_3_title": "Perangkat Jaringan",
-        "artikel_3_desc": "Bicara soal jaringan pasti ada perangkatnya.",
+        "artikel_3_desc": "Perangkat jaringan merupakan komponen penting dalam membangun sebuah jaringan komputer. Setiap perangkat memiliki fungsi dan peran masing-masing dalam menghubungkan, mengatur, serta mengelola lalu lintas data antar perangkat. Pembahasan ini akan memberikan gambaran umum mengenai jenis-jenis perangkat jaringan, fungsi dasarnya, dan bagaimana perangkat tersebut bekerja dalam sebuah jaringan.",
+
         "artikel_4_title": "Wireless Vs Wired",
-        "artikel_4_desc": "Media jaringan dibagi menjadi wireless dan wired.",
+        "artikel_4_desc": "Perbedaan antara jaringan wired dan wireless sering ditemui dalam kehidupan sehari-hari. Keduanya sama-sama digunakan untuk menghubungkan perangkat ke jaringan, tetapi memiliki cara kerja, kelebihan, dan kekurangan yang berbeda. Pembahasan ini akan mengulas secara umum media yang digunakan, tingkat kecepatan dan kestabilan, aspek keamanan, serta contoh penerapannya.",
+
         "artikel_5_title": "Printer Sharing",
-        "artikel_5_desc": "Cara agar satu printer bisa digunakan bersama.",
+        "artikel_5_desc": "Printer Sharing adalah fitur jaringan yang memungkinkan satu printer digunakan secara bersama oleh beberapa komputer melalui jaringan lokal (LAN atau Wi-Fi). Dengan printer sharing, pengguna tidak perlu memasang printer di setiap komputer karena satu printer dapat diakses dan digunakan secara efisien oleh banyak pengguna.",
+
+        "artikel_6_title": "Folder Sharing",
+        "artikel_6_desc": "Folder Sharing adalah fitur jaringan yang memungkinkan satu folder diakses dan digunakan oleh beberapa komputer secara bersamaan melalui jaringan lokal (LAN atau Wi-Fi). Dengan folder sharing, pertukaran data menjadi lebih mudah, cepat, dan efisien tanpa perlu menggunakan media penyimpanan eksternal seperti flashdisk.",
 
         "video_1_title": "Membangun Jaringan WLAN dan LAN",
-        "video_1_desc": "Tutorial lengkap membangun LAN & WLAN.",
+        "video_1_desc": "Tutorial ini membahas langkah-langkah membangun jaringan LAN dan WLAN mulai dari perencanaan, pemilihan perangkat, hingga konfigurasi dasar agar jaringan dapat berjalan dengan stabil dan efisien.",
+
         "video_2_title": "Routing Static di Cisco Packet Tracer",
-        "video_2_desc": "Tutorial routing static untuk pemula.",
+        "video_2_desc": "Pembahasan lengkap mengenai konsep dan konfigurasi routing static menggunakan Cisco Packet Tracer, cocok untuk pemula yang ingin memahami alur komunikasi antar jaringan.",
 
         "cat_jaringan": "Jaringan",
         "cat_topologi": "Topologi",
@@ -216,29 +228,32 @@
         "myporto_filter_all": "Alle",
         "myporto_filter_artikel": "Artikel",
         "myporto_filter_video": "Video",
-
         "btn_view": "Ansehen",
         "btn_visit": "Video ansehen",
+
         "artikel_1_title": "Was ist ein Netzwerk?",
         "artikel_1_desc": "Derzeit lerne ich in der Schule die Grundlagen der Netzwerktechnik. Ein Netzwerk entsteht, wenn Geräte über kabelgebundene oder drahtlose Medien verbunden sind, wobei jedes Gerät eine eindeutige Identität besitzen muss, damit Daten ihr Ziel korrekt erreichen.",
 
         "artikel_2_title": "Netzwerktopologie",
-        "artikel_2_desc": "Beim Thema Netzwerke ist es wichtig, einen Plan oder eine Struktur zu erstellen, die zeigt, wie Netzwerkgeräte miteinander verbunden sind.",
+        "artikel_2_desc": "Die Netzwerktopologie beschreibt die Struktur oder Anordnung, wie Geräte innerhalb eines Netzwerks miteinander verbunden sind. Die Topologie bestimmt den Datenfluss zwischen den Geräten und beeinflusst die Leistung, Skalierbarkeit und Wartung des Netzwerks. Zu den gängigen Topologien gehören Stern-, Bus-, Ring- und Mesh-Topologien.",
 
         "artikel_3_title": "Netzwerkgeräte",
-        "artikel_3_desc": "In Netzwerken spielen Geräte eine zentrale Rolle. Dieser Inhalt erklärt, welche Geräte es gibt und welche Funktionen sie haben.",
+        "artikel_3_desc": "Netzwerkgeräte sind wichtige Komponenten beim Aufbau eines Computernetzwerks. Jedes Gerät hat eine eigene Funktion bei der Verbindung, Verwaltung und Steuerung des Datenverkehrs zwischen Geräten. Dieser Abschnitt gibt einen allgemeinen Überblick über Netzwerkgeräte, ihre Grundfunktionen und ihren Einsatz im Netzwerk.",
 
         "artikel_4_title": "Drahtlos vs. Kabelgebunden",
-        "artikel_4_desc": "Ein Netzwerk benötigt ein Übertragungsmedium, das im Allgemeinen in zwei Haupttypen unterteilt wird: drahtlos und kabelgebunden.",
+        "artikel_4_desc": "Kabelgebundene und drahtlose Netzwerke werden häufig im Alltag verwendet, um Geräte miteinander zu verbinden. Beide haben das gleiche Ziel, unterscheiden sich jedoch in ihrer Funktionsweise, ihren Vorteilen und Nachteilen. In diesem Abschnitt werden die verwendeten Medien, Geschwindigkeit, Stabilität, Sicherheit sowie typische Einsatzbereiche vorgestellt.",
 
         "artikel_5_title": "Druckerfreigabe",
-        "artikel_5_desc": "So kann ein Drucker von mehreren Computern gemeinsam in einem Labor oder Büro genutzt werden.",
+        "artikel_5_desc": "Die Druckerfreigabe ist eine Netzwerkfunktion, die es ermöglicht, einen Drucker von mehreren Computern über ein lokales Netzwerk (LAN oder Wi-Fi) gemeinsam zu nutzen. Dadurch wird die Nutzung von Druckern effizienter, da nicht auf jedem Computer ein eigener Drucker installiert werden muss.",
+
+        "artikel_6_title": "Ordnerfreigabe",
+        "artikel_6_desc": "Die Ordnerfreigabe ist eine Netzwerkfunktion, mit der ein Ordner von mehreren Computern gleichzeitig über ein lokales Netzwerk (LAN oder Wi-Fi) genutzt werden kann. Dadurch wird der Datenaustausch einfacher, schneller und effizienter, ohne externe Speichermedien wie USB-Sticks zu verwenden.",
 
         "video_1_title": "Aufbau von WLAN- und LAN-Netzwerken",
-        "video_1_desc": "Vollständiges Tutorial zum Aufbau von LAN- und WLAN-Netzwerken von Grund auf bis zur Einsatzbereitschaft.",
+        "video_1_desc": "Dieses Tutorial erklärt die Schritte zum Aufbau von LAN- und WLAN-Netzwerken, beginnend mit der Planung, der Auswahl der Geräte bis hin zur Grundkonfiguration für ein stabiles und effizientes Netzwerk.",
 
         "video_2_title": "Statisches Routing in Cisco Packet Tracer",
-        "video_2_desc": "Einsteiger-Tutorial zur Konfiguration von statischem Routing in Cisco Packet Tracer.",
+        "video_2_desc": "Eine vollständige Erklärung der Konzepte und Konfiguration von statischem Routing mit Cisco Packet Tracer, geeignet für Anfänger, die die Kommunikation zwischen Netzwerken verstehen möchten.",
 
         "cat_jaringan": "Netzwerk",
         "cat_topologi": "Topologie",
@@ -304,26 +319,30 @@
         "fix": "Corrigiendo errores menores y mayores",
         "ste": "Fortaleciendo el rendimiento y la seguridad",
         "learn_back": "Volver",
+        
         "artikel_1_title": "¿Qué es una red?",
         "artikel_1_desc": "Actualmente estoy estudiando en la escuela los conceptos básicos de redes. Una red se forma cuando los dispositivos se conectan mediante medios cableados o inalámbricos, donde cada dispositivo debe tener una identidad para que los datos lleguen correctamente a su destino.",
 
         "artikel_2_title": "Topología de red",
-        "artikel_2_desc": "Al hablar de redes, es importante crear un mapa o diseño que muestre cómo los dispositivos de red están interconectados.",
+        "artikel_2_desc": "La topología de red es la forma o estructura de cómo los dispositivos están conectados dentro de una red. La topología determina el flujo de datos entre los dispositivos y afecta el rendimiento, la escalabilidad y el mantenimiento de la red. Las topologías más comunes son estrella, bus, anillo y malla.",
 
         "artikel_3_title": "Dispositivos de red",
-        "artikel_3_desc": "En una red, los dispositivos son esenciales. Este contenido explica qué dispositivos existen y cuál es su función.",
+        "artikel_3_desc": "Los dispositivos de red son componentes esenciales en la construcción de una red informática. Cada dispositivo cumple una función específica para conectar, gestionar y controlar el tráfico de datos entre equipos. En esta sección se presenta una visión general de los dispositivos de red, sus funciones básicas y su uso en una red.",
 
         "artikel_4_title": "Inalámbrico vs Cableado",
-        "artikel_4_desc": "Una red necesita un medio de transmisión que generalmente se divide en dos tipos principales: inalámbrico y cableado.",
+        "artikel_4_desc": "Las redes cableadas e inalámbricas se utilizan ampliamente para conectar dispositivos en la vida cotidiana. Aunque cumplen la misma función, cada tipo de red tiene características, ventajas y desventajas propias. En esta sección se explican de forma general los medios utilizados, la velocidad, la estabilidad, la seguridad y sus aplicaciones comunes.",
 
         "artikel_5_title": "Compartir impresora",
-        "artikel_5_desc": "Cómo permitir que una impresora sea utilizada por varios ordenadores en un laboratorio o entorno de oficina.",
+        "artikel_5_desc": "Compartir impresora es una función de red que permite que una sola impresora sea utilizada por varios ordenadores a través de una red local (LAN o Wi-Fi). Esta función mejora la eficiencia y reduce costos, ya que no es necesario instalar una impresora en cada equipo.",
 
-        "video_1_title": "Construcción de redes WLAN y LAN",
-        "video_1_desc": "Tutorial completo para construir redes LAN y WLAN desde cero hasta que estén listas para usarse.",
+        "artikel_6_title": "Compartir Carpetas",
+        "artikel_6_desc": "Compartir carpetas es una función de red que permite que una sola carpeta sea accedida y utilizada por varios ordenadores al mismo tiempo a través de una red local (LAN o Wi-Fi). Esta función facilita el intercambio de datos de manera más rápida y eficiente sin necesidad de dispositivos de almacenamiento externos como memorias USB.",
 
-        "video_2_title": "Enrutamiento estático en Cisco Packet Tracer",
-        "video_2_desc": "Tutorial para principiantes sobre cómo configurar el enrutamiento estático en Cisco Packet Tracer.",
+        "video_1_title": "Construcción de Redes WLAN y LAN",
+        "video_1_desc": "Este tutorial explica los pasos para construir redes LAN y WLAN, desde la planificación y selección de dispositivos hasta la configuración básica para garantizar una red estable y eficiente.",
+
+        "video_2_title": "Enrutamiento Estático en Cisco Packet Tracer",
+        "video_2_desc": "Explicación completa de los conceptos y la configuración del enrutamiento estático utilizando Cisco Packet Tracer, ideal para principiantes que desean comprender la comunicación entre redes.",
 
         "cat_jaringan": "Red",
         "cat_topologi": "Topología",

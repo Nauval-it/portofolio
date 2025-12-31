@@ -1,4 +1,5 @@
 const portfolioData = [
+        // ... artikel 1-10
     {
         id: 1,
         type: 'artikel',
@@ -22,8 +23,8 @@ const portfolioData = [
         type: 'artikel',
         titleKey: 'artikel_3_title',
         descKey: 'artikel_3_desc',
-        imageUrl: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*MCJhazp900fkivotutC9Pg.jpeg',
-        category: 'cat_jaringan',
+        imageUrl: 'https://www.siswapedia.com/wp-content/uploads/2014/01/Perangkat-Keras-Jaringan-Komputer.jpg',
+        categoryKey: 'cat_jaringan',
         url: 'https://medium.com/@nauvalx3/perangkat-jaringan-itu-apa-aja-sih-05167c0d21ef'
     },
     {
@@ -32,7 +33,7 @@ const portfolioData = [
         titleKey: 'artikel_4_title',
         descKey: 'artikel_4_desc',
         imageUrl: 'https://www.inlink.systems/wp-content/uploads/2024/01/Inlink_wired_vs_wireless_network.png',
-        category: 'cat_jaringan',
+        categoryKey: 'cat_jaringan',
         url: 'https://medium.com/@nauvalx3/apa-bedanya-wireless-dan-wired-44b27adb0782'
     },
     {
@@ -41,12 +42,21 @@ const portfolioData = [
         titleKey: 'artikel_5_title',
         descKey: 'artikel_5_desc',
         imageUrl: 'https://miro.medium.com/v2/resize:fit:640/format:webp/1*K_MP7pxN30TJLE5HuY_i1A.png',
-        category: 'cat_jaringan',
+        categoryKey: 'cat_jaringan',
         url: 'https://medium.com/@nauvalx3/tutorial-menggunakan-printer-sharing-68e3f4a7dffe'
     },
-    // ... artikel 3-5
     {
         id: 6,
+        type: 'artikel',
+        titleKey: 'artikel_6_title',
+        descKey: 'artikel_6_desc',
+        imageUrl: 'https://media.istockphoto.com/id/1093459412/vector/laptop-and-download-file.jpg?s=612x612&w=0&k=20&c=AP_E15OrpNugCpiYXUTVk2CxAdyWqdU_2e4ILgH26R4=',
+        categoryKey: 'cat_jaringan',
+        url: ' https://medium.com/@nauvalx3/cara-membuat-folder-sharing-70acc88fab42'
+    },
+    // ... video 11 - 15
+    {
+        id: 11,
         type: 'video',
         titleKey: 'video_1_title',
         descKey: 'video_1_desc',
@@ -55,7 +65,7 @@ const portfolioData = [
         categoryKey: 'cat_configuration'
     },
     {
-        id: 7,
+        id: 12,
         type: 'video',
         titleKey: 'video_2_title',
         descKey: 'video_2_desc',
