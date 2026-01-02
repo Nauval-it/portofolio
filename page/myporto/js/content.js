@@ -61,7 +61,7 @@ const portfolioData = [
         titleKey: 'video_1_title',
         descKey: 'video_1_desc',
         videoUrl: 'https://youtu.be/JIYIlP3UnBs',
-        imageUrl: 'https://i.ibb.co.com/RGR7KQhV/Purple-and-White-Simple-Gaming-Youtube-Thumbnail.png',
+        imageUrl: 'https://i.ibb.co.com/PZR5NTGt/Purple-and-White-Simple-Gaming-Youtube-Thumbnail.png',
         categoryKey: 'cat_configuration'
     },
     {
